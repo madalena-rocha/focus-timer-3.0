@@ -1,4 +1,6 @@
 import {
+    buttonLightTheme,
+    buttonDarkTheme,
     buttonPlay,
     buttonStop,
     buttonPlus,
@@ -10,6 +12,16 @@ import {
 } from "./elements.js"
 
 export default function({controls, timer, sound}) {
+    buttonLightTheme.addEventListener('click', function() {
+        controls.changeTheme()
+        sound.pressButton()
+    })
+
+    buttonDarkTheme.addEventListener('click', function() {
+        controls.changeTheme()
+        sound.pressButton()
+    })
+
     buttonPlay.addEventListener('click', function() {
         timer.countdown()
         sound.pressButton()

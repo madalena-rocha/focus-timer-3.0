@@ -3,6 +3,9 @@ import Timer from "./timer.js"
 import Sound from "./sounds.js"
 import Events from "./events.js"
 import {
+    body,
+    buttonLightTheme,
+    buttonDarkTheme,
     buttonSoundForest,
     buttonSoundRain,
     buttonSoundCoffeeShop,
@@ -12,6 +15,9 @@ import {
 } from "./elements.js"
 
 const controls = Controls({
+    body,
+    buttonLightTheme,
+    buttonDarkTheme,
     buttonSoundForest,
     buttonSoundRain,
     buttonSoundCoffeeShop,

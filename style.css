@@ -5,20 +5,24 @@
 }
 
 :root {
-    --bg-color: #FFFFFF;
+    --bg-light: #FFFFFF;
+    --bg-dark: hsl(var(--base-color), 5%, 7%);
 
-    --base-color: 194;
-    --bg-primary-light: hsl(240, 9%, 89%);
-    --primary-color: hsl(var(--base-color), 97%, 31%);
+    --base-color: 240;
+    --bg-cards-light: hsl(var(--base-color), 9%, 89%);
+    --bg-cards-dark: hsl(var(--base-color), 6%, 17%);
+    --bg-cards-select: hsl(194, 97%, 31%);
+    --controls-dark: hsl(var(--base-color), 7%, 78%);
 
-    --text-color: #323238;
+    --text-light: hsl(var(--base-color), 6%, 21%);
+    --text-dark: #FFFFFF;
 
     font-size: 62.5%;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: var(--bg-light);
+    color: var(--text-light);
     
     font-family: 'Roboto', sans-serif;
     font-size: 1.6rem;
@@ -28,6 +32,8 @@ body {
     justify-content: center;
 
     min-height: 100vh;
+
+    transition: background-color .5s ease;
 }
 
 button {
@@ -42,6 +48,21 @@ button {
     grid-template-areas: "main aside";
 
     width: clamp(54.7rem, 64.1vw, 82.1rem);
+}
+
+header {
+    position: absolute;
+    top: clamp(4rem, 4.7vw, 6rem);
+    right: clamp(4rem, 4.7vw, 6rem);
+}
+
+header button svg {
+    width: clamp(2.7rem, 3.1vw, 4rem);
+    height: auto;
+}
+
+.hide {
+    display: none;
 }
 
 main {
@@ -88,19 +109,21 @@ aside button svg {
 }
 
 aside button svg path:nth-child(1) {
-    fill: var(--bg-primary-light);
+    fill: var(--bg-cards-light);
+
+    transition: fill .5s ease;
 }
 
 aside button svg path:nth-child(2) {
-    fill: var(--text-color);
+    fill: var(--text-light);
 }
 
 aside button.active svg path:nth-child(1) {
-    fill: var(--primary-color);
+    fill: var(--bg-cards-select);
 }
 
 aside button.active svg path:nth-child(2) {
-    fill: var(--bg-color);
+    fill: var(--bg-light);
 }
 
 .sound-forest {
@@ -117,4 +140,31 @@ aside button.active svg path:nth-child(2) {
 
 .sound-fireplace {
     grid-area: fireplace;
+}
+
+/* Dark Mode */
+
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+
+    transition: background-color .5s ease;
+}
+
+body.dark-mode #controls button svg path {
+    fill: var(--controls-dark);
+}
+
+body.dark-mode aside button svg path:nth-child(1) {
+    fill: var(--bg-cards-dark);
+
+    transition: fill .5s ease;
+}
+
+body.dark-mode aside button svg path:nth-child(2) {
+    fill: var(--bg-light);
+}
+
+body.dark-mode aside button.active svg path:nth-child(1) {
+    fill: var(--bg-cards-select);
 }
