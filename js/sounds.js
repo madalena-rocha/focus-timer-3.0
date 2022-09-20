@@ -2,7 +2,11 @@ import {
     buttonSoundForest,
     buttonSoundRain,
     buttonSoundCoffeeShop,
-    buttonSoundFireplace
+    buttonSoundFireplace,
+    inputForestVolume,
+    inputRainVolume,
+    inputCoffeeShopVolume,
+    inputFireplaceVolume
 } from "./elements.js"
 
 export default function() {
@@ -17,7 +21,7 @@ export default function() {
     bgAudioRain.loop = true
     bgAudioCoffeeShop.loop = true
     bgAudioFireplace.loop = true
-    
+
     function pressButton() {
         buttonPressAudio.play()
     }
@@ -50,12 +54,40 @@ export default function() {
         : bgAudioFireplace.pause()
     }
 
+    function setAudioVolume() {
+        bgAudioForest.volume = inputForestVolume.value
+        bgAudioRain.volume = inputRainVolume.value
+        bgAudioCoffeeShop.volume = inputCoffeeShopVolume.value
+        bgAudioFireplace.volume = inputFireplaceVolume.value
+    }
+
+    function resetForestVolume() {
+        inputForestVolume.value = 0.5
+    }
+
+    function resetRainVolume() {
+        inputRainVolume.value = 0.5
+    }
+
+    function resetCoffeeShopVolume() {
+        inputCoffeeShopVolume.value = 0.5
+    }
+
+    function resetFireplaceVolume() {
+        inputFireplaceVolume.value = 0.5
+    }
+
     return {
         pressButton,
         timeEnd,
         audioForest,
         audioRain,
         audioCoffeeShop,
-        audioFireplace
+        audioFireplace,
+        setAudioVolume,
+        resetForestVolume,
+        resetRainVolume,
+        resetCoffeeShopVolume,
+        resetFireplaceVolume
     }
 }

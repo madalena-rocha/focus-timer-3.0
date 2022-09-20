@@ -8,7 +8,11 @@ import {
     buttonSoundForest,
     buttonSoundRain,
     buttonSoundCoffeeShop,
-    buttonSoundFireplace
+    buttonSoundFireplace,
+    inputForestVolume,
+    inputRainVolume,
+    inputCoffeeShopVolume,
+    inputFireplaceVolume
 } from "./elements.js"
 
 export default function({controls, timer, sound}) {
@@ -46,23 +50,32 @@ export default function({controls, timer, sound}) {
         controls.soundForest()
         sound.pressButton()
         sound.audioForest()
+        sound.resetForestVolume()
     })
 
     buttonSoundRain.addEventListener('click', function() {
         controls.soundRain()
         sound.pressButton()
         sound.audioRain()
+        sound.resetRainVolume()
     })
 
     buttonSoundCoffeeShop.addEventListener('click', function() {
         controls.soundCoffeeShop()
         sound.pressButton()
         sound.audioCoffeeShop()
+        sound.resetCoffeeShopVolume()
     })
 
     buttonSoundFireplace.addEventListener('click', function() {
         controls.soundFireplace()
         sound.pressButton()
         sound.audioFireplace()
+        sound.resetFireplaceVolume()
     })
+
+    inputForestVolume.addEventListener('input', sound.setAudioVolume)
+    inputRainVolume.addEventListener('input', sound.setAudioVolume)
+    inputCoffeeShopVolume.addEventListener('input', sound.setAudioVolume)
+    inputFireplaceVolume.addEventListener('input', sound.setAudioVolume)
 }

@@ -12,6 +12,11 @@ const buttonSoundRain = document.querySelector('.sound-rain')
 const buttonSoundCoffeeShop = document.querySelector('.sound-coffee-shop')
 const buttonSoundFireplace = document.querySelector('.sound-fireplace')
 
+const inputForestVolume = document.querySelector('#forest-volume')
+const inputRainVolume = document.querySelector('#rain-volume')
+const inputCoffeeShopVolume = document.querySelector('#coffee-shop-volume')
+const inputFireplaceVolume = document.querySelector('#fireplace-volume')
+
 const minutesDisplay = document.querySelector('.minutes')
 const secondsDisplay = document.querySelector('.seconds')
 
@@ -27,6 +32,10 @@ export {
     buttonSoundRain,
     buttonSoundCoffeeShop,
     buttonSoundFireplace,
+    inputForestVolume,
+    inputRainVolume,
+    inputCoffeeShopVolume,
+    inputFireplaceVolume,
     minutesDisplay,
     secondsDisplay
 }
