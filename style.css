@@ -11,7 +11,8 @@
     --base-color: 240;
     --bg-cards-light: hsl(var(--base-color), 9%, 89%);
     --bg-cards-dark: hsl(var(--base-color), 6%, 17%);
-    --bg-cards-select: hsl(194, 97%, 31%);
+    --bg-cards-select-light: hsl(194, 97%, 31%);
+    --bg-cards-select-dark: hsl(195, 74%, 15%);
     --controls-dark: hsl(var(--base-color), 7%, 78%);
 
     --text-light: hsl(var(--base-color), 6%, 21%);
@@ -103,26 +104,33 @@ aside {
     justify-self: right;
 }
 
-aside button svg {
+aside button {
     width: clamp(9.2rem, 10.8vw, 13.8rem);
     height: auto;
+
+    border-radius: clamp(1.6rem, 1.9vw, 2.4rem);
+    padding: clamp(1.6rem, 1.9vw, 2.4rem);
+
+    background-color: var(--bg-cards-light);
+
+    transition: background .5s ease;
 }
 
-aside button svg path:nth-child(1) {
-    fill: var(--bg-cards-light);
-
-    transition: fill .5s ease;
+aside button.active {
+    background-color: var(--bg-cards-select-light);
 }
 
-aside button svg path:nth-child(2) {
+aside button svg {
+    width: auto;
+    height: clamp(3.7rem, 4.4vw, 5.6rem);
+    margin-bottom: clamp(2.1rem, 2.5vw, 3.2rem);
+}
+
+aside button svg path {
     fill: var(--text-light);
 }
 
-aside button.active svg path:nth-child(1) {
-    fill: var(--bg-cards-select);
-}
-
-aside button.active svg path:nth-child(2) {
+aside button.active svg path {
     fill: var(--bg-light);
 }
 
@@ -142,6 +150,71 @@ aside button.active svg path:nth-child(2) {
     grid-area: fireplace;
 }
 
+input[type="range"] {
+    -webkit-appearance: none;
+    
+    width: clamp(6rem, 7vw, 9rem);
+    cursor: pointer;
+
+    background: transparent;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    
+    width: clamp(6rem, 7vw, 9rem);
+    height: clamp(.3rem, .3vw, .4rem);
+    border-radius: .5rem;
+
+    background-color: var(--text-light);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    
+    width: clamp(1.1rem, 1.3vw, 1.6rem);
+    height: clamp(1.1rem, 1.3vw, 1.6rem);
+    border-radius: 50%;
+    
+    background-color: var(--text-light);
+
+    position: relative;
+    top: calc(50% - clamp(1.1rem, 1.3vw, 1.6rem) / 2);
+}
+
+aside button.active input[type="range"]::-webkit-slider-runnable-track,
+aside button.active input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--bg-light);
+}
+
+input[type="range"]::-moz-range-track {
+    -webkit-appearance: none;
+    
+    width: clamp(6rem, 7vw, 9rem);
+    height: clamp(.3rem, .3vw, .4rem);
+    border-radius: .5rem;
+
+    background-color: var(--text-light);
+}
+
+input[type="range"]::-moz-range-thumb {
+    -webkit-appearance: none;
+    
+    width: clamp(1.1rem, 1.3vw, 1.6rem);
+    height: clamp(1.1rem, 1.3vw, 1.6rem);
+    border-radius: 50%;
+    
+    background-color: var(--text-light);
+
+    position: relative;
+    top: calc(50% - clamp(1.1rem, 1.3vw, 1.6rem) / 2);
+}
+
+aside button.active input[type="range"]::-moz-range-track,
+aside button.active input[type="range"]::-moz-range-thumb {
+  background-color: var(--bg-light);
+}
+
 /* Dark Mode */
 
 body.dark-mode {
@@ -155,16 +228,30 @@ body.dark-mode #controls button svg path {
     fill: var(--controls-dark);
 }
 
-body.dark-mode aside button svg path:nth-child(1) {
-    fill: var(--bg-cards-dark);
+body.dark-mode aside button {
+    background-color: var(--bg-cards-dark);
 
-    transition: fill .5s ease;
+    transition: background .5s ease;
 }
 
-body.dark-mode aside button svg path:nth-child(2) {
+body.dark-mode aside button.active {
+    background-color: var(--bg-cards-select-dark);
+}
+
+body.dark-mode aside button svg path {
+    fill: var(--controls-dark);
+}
+
+body.dark-mode aside button.active svg path {
     fill: var(--bg-light);
 }
 
-body.dark-mode aside button.active svg path:nth-child(1) {
-    fill: var(--bg-cards-select);
+body.dark-mode aside button input[type="range"]::-webkit-slider-runnable-track,
+body.dark-mode aside button input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--bg-light);
+}
+
+body.dark-mode aside button input[type="range"]::-moz-range-track,
+body.dark-mode aside button input[type="range"]::-moz-range-thumb {
+  background-color: var(--bg-light);
 }
