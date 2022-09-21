@@ -1,8 +1,8 @@
 import {
-    buttonSoundForest,
-    buttonSoundRain,
-    buttonSoundCoffeeShop,
-    buttonSoundFireplace,
+    cardForest,
+    cardRain,
+    cardCoffeeShop,
+    cardFireplace,
     inputForestVolume,
     inputRainVolume,
     inputCoffeeShopVolume,
@@ -31,25 +31,25 @@ export default function() {
     }
 
     function audioForest() {
-        buttonSoundForest.classList.contains('active')
+        cardForest.classList.contains('active')
         ? bgAudioForest.play()
         : bgAudioForest.pause()
     }
 
     function audioRain() {
-        buttonSoundRain.classList.contains('active')
+        cardRain.classList.contains('active')
         ? bgAudioRain.play()
         : bgAudioRain.pause()
     }
 
     function audioCoffeeShop() {
-        buttonSoundCoffeeShop.classList.contains('active')
+        cardCoffeeShop.classList.contains('active')
         ? bgAudioCoffeeShop.play()
         : bgAudioCoffeeShop.pause()
     }
 
     function audioFireplace() {
-        buttonSoundFireplace.classList.contains('active')
+        cardFireplace.classList.contains('active')
         ? bgAudioFireplace.play()
         : bgAudioFireplace.pause()
     }

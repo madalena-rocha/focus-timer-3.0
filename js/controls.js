@@ -2,10 +2,10 @@ export default function Controls({
     body,
     buttonLightTheme,
     buttonDarkTheme,
-    buttonSoundForest,
-    buttonSoundRain,
-    buttonSoundCoffeeShop,
-    buttonSoundFireplace
+    cardForest,
+    cardRain,
+    cardCoffeeShop,
+    cardFireplace
 }) {
     function changeTheme() {
         buttonLightTheme.classList.toggle('hide')
@@ -14,27 +14,19 @@ export default function Controls({
     }
 
     function soundForest() {
-        buttonSoundForest.classList.contains('active') 
-        ? buttonSoundForest.classList.remove('active')
-        : buttonSoundForest.classList.add('active')
+        cardForest.classList.toggle('active')
     }
 
     function soundRain() {
-        buttonSoundRain.classList.contains('active') 
-        ? buttonSoundRain.classList.remove('active')
-        : buttonSoundRain.classList.add('active')
+        cardRain.classList.toggle('active')
     }
 
     function soundCoffeeShop() {
-        buttonSoundCoffeeShop.classList.contains('active') 
-        ? buttonSoundCoffeeShop.classList.remove('active')
-        : buttonSoundCoffeeShop.classList.add('active')
+        cardCoffeeShop.classList.toggle('active')
     }
 
     function soundFireplace() {
-        buttonSoundFireplace.classList.contains('active') 
-        ? buttonSoundFireplace.classList.remove('active')
-        : buttonSoundFireplace.classList.add('active')
+        cardFireplace.classList.toggle('active')
     }
 
     return {

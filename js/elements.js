@@ -7,6 +7,11 @@ const buttonStop = document.querySelector('.stop')
 const buttonPlus = document.querySelector('.plus')
 const buttonMinus = document.querySelector('.minus')
 
+const cardForest = document.querySelector('.card-forest')
+const cardRain = document.querySelector('.card-rain')
+const cardCoffeeShop = document.querySelector('.card-coffee-shop')
+const cardFireplace = document.querySelector('.card-fireplace')
+
 const buttonSoundForest = document.querySelector('.sound-forest')
 const buttonSoundRain = document.querySelector('.sound-rain')
 const buttonSoundCoffeeShop = document.querySelector('.sound-coffee-shop')
@@ -28,6 +33,10 @@ export {
     buttonStop,
     buttonPlus,
     buttonMinus,
+    cardForest,
+    cardRain,
+    cardCoffeeShop,
+    cardFireplace,
     buttonSoundForest,
     buttonSoundRain,
     buttonSoundCoffeeShop,
