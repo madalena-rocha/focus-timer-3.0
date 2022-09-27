@@ -2,6 +2,8 @@ export default function Controls({
     body,
     buttonLightTheme,
     buttonDarkTheme,
+    buttonPlay,
+    buttonPause,
     cardForest,
     cardRain,
     cardCoffeeShop,
@@ -11,6 +13,21 @@ export default function Controls({
         buttonLightTheme.classList.toggle('hide')
         buttonDarkTheme.classList.toggle('hide')
         body.classList.toggle('dark-mode')
+    }
+
+    function play() {
+        buttonPlay.classList.add('hide')
+        buttonPause.classList.remove('hide')
+    }
+
+    function pause() {
+        buttonPause.classList.add('hide')
+        buttonPlay.classList.remove('hide')
+    }
+
+    function reset() {
+        buttonPlay.classList.remove('hide')
+        buttonPause.classList.add('hide')
     }
 
     function soundForest() {
@@ -31,6 +48,9 @@ export default function Controls({
 
     return {
         changeTheme,
+        play,
+        pause,
+        reset,
         soundForest,
         soundRain,
         soundCoffeeShop,

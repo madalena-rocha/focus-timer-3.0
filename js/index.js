@@ -6,6 +6,9 @@ import {
     body,
     buttonLightTheme,
     buttonDarkTheme,
+    buttonPlay,
+    buttonPause,
+    buttonStop,
     cardForest,
     cardRain,
     cardCoffeeShop,
@@ -22,6 +25,9 @@ const controls = Controls({
     body,
     buttonLightTheme,
     buttonDarkTheme,
+    buttonPlay,
+    buttonPause,
+    buttonStop,
     cardForest,
     cardRain,
     cardCoffeeShop,
@@ -34,7 +40,8 @@ const controls = Controls({
 
 const timer = Timer({
     minutesDisplay,
-    secondsDisplay
+    secondsDisplay,
+    resetControls: controls.reset
 })
 
 const sound = Sound()

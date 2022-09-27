@@ -3,6 +3,7 @@ const buttonLightTheme = document.querySelector('.light-theme')
 const buttonDarkTheme = document.querySelector('.dark-theme')
 
 const buttonPlay = document.querySelector('.play')
+const buttonPause = document.querySelector('.pause')
 const buttonStop = document.querySelector('.stop')
 const buttonPlus = document.querySelector('.plus')
 const buttonMinus = document.querySelector('.minus')
@@ -30,6 +31,7 @@ export {
     buttonLightTheme,
     buttonDarkTheme,
     buttonPlay,
+    buttonPause,
     buttonStop,
     buttonPlus,
     buttonMinus,
